@@ -74,7 +74,7 @@ export const StatLine = ({ pathD, circleX, circleY, count, label, position }: St
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.25 }}
-          className={`absolute ${isTop ? 'right-8 top-1/3' : 'right-10 bottom-1/3'} text-white font-inky-header text-3xl font-bold`}
+          className={`absolute ${isTop ? 'right-8 top-1/3' : 'right-10 bottom-1/3'} text-white font-inky-header text-xl sm:text-2xl md:text-3xl font-bold`}
         >
           <AnimatedCounter target={count} />+
         </motion.span>
@@ -82,7 +82,7 @@ export const StatLine = ({ pathD, circleX, circleY, count, label, position }: St
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1.25 }}
-          className={`absolute ${isTop ? 'right-0 top-2/5 translate-y-3' : 'right-1 bottom-1/3 translate-y-4'} text-[#A4A4A4] font-inky-body text-xs font-normal`}
+          className={`absolute ${isTop ? 'right-0 top-2/5 translate-y-3' : 'right-1 bottom-1/3 translate-y-4'} text-[#A4A4A4] font-inky-body text-[10px] sm:text-xs font-normal`}
         >
           {label}
         </motion.span>

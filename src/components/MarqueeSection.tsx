@@ -18,7 +18,7 @@ export const MarqueeSection = () => (
           textColor="#940008"
         />
       </div>
-      <div className="rotate-[-8deg] w-[120vw] -translate-y-24">
+      <div className="rotate-[-8deg] w-[120vw] -translate-y-12 sm:-translate-y-16 md:-translate-y-24">
         <SlantedMarquee
           text={MARQUEE_TEXT}
           duration={20}

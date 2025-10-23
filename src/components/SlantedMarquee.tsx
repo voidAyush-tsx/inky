@@ -59,7 +59,7 @@ export const SlantedMarquee = ({
             className="shrink-0"
           >
             <span 
-              className="text-2xl md:text-4xl font-medium tracking-tight"
+              className="text-lg sm:text-xl md:text-2xl lg:text-4xl font-medium tracking-tight"
               style={{ color: textColor }}
               dangerouslySetInnerHTML={{ 
                 __html: text.replace(
