@@ -12,6 +12,7 @@
   --font-inky-body: 'Inter', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-libre-baskerville: 'Libre Baskerville', serif;
+  --font-kiwi-maru: 'Kiwi Maru', serif;
 }
 
 @media (prefers-color-scheme: dark) {

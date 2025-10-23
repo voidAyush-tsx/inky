@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { User } from "lucide-react";
+import { User, ArrowRight } from "lucide-react";
 import LottieBackground from "../components/finger_scan";
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
@@ -141,7 +141,7 @@ export default function Home() {
 				</div>
 			</header>
 
-			<section className="flex-1 w-full max-w-7xl mx-auto py-16 px-6">
+			<section className="flex-1 w-full max-w-7xl mx-auto py-32">
 				<div className="relative w-full h-96 flex items-center justify-center">
 					{/* blurred background */}
 					<div className="absolute inset-0 pointer-events-none flex items-center justify-center">
@@ -323,10 +323,21 @@ export default function Home() {
 						</span>
 					</span>
 
-
 					{/* lottie animation above the blur */}
 					<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 						<LottieBackground opacity={0.8} />
+					</div>
+				</div>
+				<div className="absolute flex flex-col items-start justify-center -translate-y-64 -translate-x-1/12 max-w-lg text-left">
+					<div className="font-inky-header text-5xl leading-snug">
+						Where Storytelling Comes Alive
+					</div>
+					<div className="font-inky-body text-xl text-[#E00C17] mt-2">
+						Publishing, design, and multimedia solutions for creators who want to leave a mark
+					</div>
+					<div className="flex items-end gap-2 font-kiwi-maru text-lg text-[#A4A4A4] mt-4">
+						our services
+						<ArrowRight className="w-5" />
 					</div>
 				</div>
 			</section>
