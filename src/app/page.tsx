@@ -23,9 +23,9 @@ export default function Home() {
             }}
           />
           <div
-            className="flex font-inky-header font-extrabold text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center items-center justify-center text-transparent leading-tight relative z-10"
+            className="flex font-inky-header font-extrabold text-9xl text-center items-center justify-center text-transparent leading-tight relative z-10"
             style={{
-              WebkitTextStroke: "1px sm:1.2px #000000",
+              WebkitTextStroke: "1.2px #000000",
               WebkitTextFillColor: "rgba(0, 0, 0, 0)",
               filter: "drop-shadow(0 1.72px 10px #FF0000)",
             }}
