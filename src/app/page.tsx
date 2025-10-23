@@ -331,49 +331,63 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* slanted infinite marquee section */}
-			<div className="overflow-x-clip flex flex-col items-center z-50 relative">
-				{/* first loop */}
-				<div className="rotate-[8deg] w-[120vw]">
-					<SlantedMarquee
-					// text="{Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} |"
-					text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
-					duration={20}
-					scale={1.1}
-					direction="left"
-					backgroundColor="#000000"
-					textColor="#940008"
-					accentColor="#0000008f"
-					translateY={0}
-					/>
+			{/* Marquee Section with bottom-circle background */}
+			<div className="relative">
+				{/* slanted infinite marquee section */}
+				<div className="overflow-x-clip flex flex-col items-center z-50 relative">
+					{/* first loop */}
+					<div className="rotate-[8deg] w-[120vw]">
+						<SlantedMarquee
+						// text="{Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} |"
+						text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
+						duration={20}
+						scale={1.1}
+						direction="left"
+						backgroundColor="#000000"
+						textColor="#940008"
+						accentColor="#0000008f"
+						translateY={0}
+						/>
+					</div>
+					{/* second loop */}
+					<div className="rotate-[-8deg] w-[120vw] -translate-y-24">
+						<SlantedMarquee
+						text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
+						duration={20}
+						scale={1.1}
+						direction="right"
+						backgroundColor="#000000"
+						textColor="#940008"
+						translateY={0}
+						/>
+					</div>
 				</div>
-				{/* second loop */}
-				<div className="rotate-[-8deg] w-[120vw] -translate-y-24">
-					<SlantedMarquee
-					text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
-					duration={20}
-					scale={1.1}
-					direction="right"
-					backgroundColor="#000000"
-					textColor="#940008"
-					translateY={0}
-					/>
-				</div>
-			</div>
 
-			{/* bottom circle behind the marquee */}
-			<div className="absolute inset-0 translate-y-1/3 flex items-center justify-center pointer-events-none z-0">
-				<Image
-					src="/bottom-circle.png"
-					alt="Background"
-					width={1440}
-					height={937.5}
-					// fill
-					className="object-cover opacity-50"
-					priority={false}
-				/>
-			
+				{/* bottom circle behind the marquee */}
+				<div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+					<Image
+						src="/bottom-circle.png"
+						alt="Background"
+						width={1440}
+						height={937.5}
+						className="object-cover opacity-50"
+						priority={false}
+					/>
+				</div>
 			</div>
+			
+			<section className="relative w-full py-16">
+				<div className="w-full flex items-center justify-center">
+					<Image
+						src="/textual_image.png"
+						alt="Textual Background"
+						width={1215.14}
+						height={316.57}
+						className="object-cover"
+						priority={false}
+					/>
+				</div>
+			</section>
 		</div>
 	);
 }
