@@ -1,28 +1,32 @@
 import Image from "next/image";
+import { User } from "lucide-react";
 
 export default function Home() {
 	return (
 		<div className="min-h-screen flex flex-col bg-black">
-			<header className="w-full py-8 px-6">
-				<div className="w-full mx-auto flex items-center justify-between">
+			<header className="w-full py-8 px-16">
+				<div className="w-full mx-auto flex py-1 px-8 items-center justify-between bg-[#ffffff10] border-2 border-black rounded-xl shadow-[0px_0px_5px_rgba(255,255,255,0.33)]">
 					<div className="flex items-center gap-3">
 						<Image
-							className=""
-							src="/nav_logo.png"
+							className="w-24 h-auto"
+							src="/logo.png"
 							alt="logo"
-							width={36}
-							height={20}
+							width={100}
+							height={52.5}
 							priority={false}
 						/>
-						<span className="font-semibold text-lg text-white">Inky</span>
 					</div>
-					<nav className="hidden sm:flex gap-6 text-sm">
-						<a href="#" className="text-zinc-400">Home</a>
-						<a href="#" className="text-zinc-400">Docs</a>
-						<a href="#" className="text-zinc-400">About</a>
+					<nav className="hidden sm:flex items-center justify-around gap-12 text-xl text-white font-inky-body">
+						<a className="hover:text-red-600">Home</a>
+						<a className="hover:text-red-600">About</a>
+						<a className="hover:text-red-600">Products</a>
+						<a className="hover:text-red-600">Services</a>
+						<a className="hover:text-red-600">Publishing</a>
 					</nav>
-					<div className="hidden sm:flex items-center gap-2">
-						<button className="rounded-full border border-white/20 px-3 py-1 text-sm text-white">Sign in</button>
+					<div className="hidden sm:flex items-center">
+						<button className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-colors">
+							<User className="w-5 h-5 text-white" />
+						</button>
 					</div>
 				</div>
 			</header>
