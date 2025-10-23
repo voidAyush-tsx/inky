@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     title: "Inky - Where Storytelling Comes Alive",
     description: "Building scalable and innovative web solutions.",
     siteName: "Inky",
-    // url: "your site url here",
+    url: "https://inky-roan.vercel.app/",
     images: [
       {
-        url: "https://yourdomain.com/og-image.png", //change this to your domain after hosting website
+        url: "https://inky-roan.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Inky - Where Storytelling Comes Alive",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Inky - Where Storytelling Comes Alive",
     description: "Publishing, design, and multimedia solutions for creators want to leave a mark",
-    images: ["https://yourdomain.com/og-image.png"], //change this to your domain after hosting website
+    images: ["https://inky-roan.vercel.app/og-image.png"],
   },
 };
 
