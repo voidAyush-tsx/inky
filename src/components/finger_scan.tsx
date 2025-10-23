@@ -1,7 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
-import animationData from "../../public/finger_scan.json"; // Adjust path to your JSON file
+import animationData from "../../public/finger_scan.json";
 
 interface LottieBackgroundProps {
   className?: string;
@@ -23,7 +23,7 @@ export default function LottieBackground({
         animationData={animationData}
         loop={true}
         autoplay={true}
-        style={{ width: '20%', height: '20%' }}
+        style={{ width: '100%', height: '100%' }}
         rendererSettings={{
           preserveAspectRatio: 'xMidYMid slice'
         }}

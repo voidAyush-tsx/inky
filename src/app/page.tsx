@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { User } from "lucide-react";
-import LottieBackground from "../components/lottieanimations";
+import LottieBackground from "../components/finger_scan";
 
 export default function Home() {
 	return (
@@ -35,7 +35,18 @@ export default function Home() {
 				</header>
 
 				<main className="flex-1 w-full max-w-7xl mx-auto py-16 px-6">
-					<LottieBackground opacity={1} className="-z-10" />
+					<div className="relative w-full h-96 flex items-center justify-center">
+						{/* blurred background */}
+						<div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+							<div className="w-[600px] h-[600px] rounded-full bg-[#972323] opacity-20 blur-3xl transform" />
+							<div className="absolute w-[600px] h-[600px] rounded-full  bg-[#ffffff05] transform" />
+						</div>
+
+						{/* lottie animation above the blur */}
+						<div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+							<LottieBackground opacity={0.8} />
+						</div>
+					</div>
 				</main>
 			</div>
 		</div>
