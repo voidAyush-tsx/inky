@@ -203,7 +203,7 @@ export default function Home() {
 								</filter>
 							</defs>
 						</svg>
-						<span>
+						<span className="flex flex-col items-start justify-center">
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -232,6 +232,14 @@ export default function Home() {
 									<span id="counter-1">0</span>
 								</motion.span>
 								+
+							</motion.span>
+							<motion.span
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 0.5, delay: 1.25 }}
+								className="absolute right-0 top-2/5 text-[#A4A4A4] font-inky-body text-xs translate-y-3 font-normal"
+							>
+								Articles published
 							</motion.span>
 						</span>
 					</span>
@@ -290,7 +298,7 @@ export default function Home() {
 								</filter>
 							</defs>
 						</svg>
-						<span>
+						<span className="flex flex-col items-start justify-center">
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
@@ -320,6 +328,14 @@ export default function Home() {
 								</motion.span>
 								+
 							</motion.span>
+							<motion.span
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 0.5, delay: 1.25 }}
+								className="absolute right-1 bottom-1/3 text-[#A4A4A4] font-inky-body text-xs translate-y-4 font-normal"
+							>
+								Books published
+							</motion.span>
 						</span>
 					</span>
 
@@ -328,18 +344,38 @@ export default function Home() {
 						<LottieBackground opacity={0.8} />
 					</div>
 				</div>
-				<div className="absolute flex flex-col items-start justify-center -translate-y-64 -translate-x-1/12 max-w-lg text-left">
-					<div className="font-inky-header text-5xl leading-snug">
+				<motion.div
+					className="absolute flex flex-col items-start justify-center -translate-y-64 -translate-x-1/12 max-w-lg text-left"
+					initial={{ x: -120, opacity: 0 }}
+					animate={{ x: 0, opacity: 1 }}
+					transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+				>
+					<motion.div
+						className="font-inky-header text-5xl leading-snug"
+						initial={{ x: -20, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 0.6, delay: 0.35 }}
+					>
 						Where Storytelling Comes Alive
-					</div>
-					<div className="font-inky-body text-xl text-[#E00C17] mt-2">
+					</motion.div>
+					<motion.div
+						className="font-inky-body text-xl text-[#E00C17] mt-2"
+						initial={{ x: -20, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 0.6, delay: 0.5 }}
+					>
 						Publishing, design, and multimedia solutions for creators who want to leave a mark
-					</div>
-					<div className="flex items-end gap-2 font-kiwi-maru text-lg text-[#A4A4A4] mt-4">
+					</motion.div>
+					<motion.div
+						className="flex items-end gap-2 font-kiwi-maru text-lg text-[#A4A4A4] mt-4"
+						initial={{ x: -20, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 0.6, delay: 0.65 }}
+					>
 						our services
 						<ArrowRight className="w-5" />
-					</div>
-				</div>
+					</motion.div>
+				</motion.div>
 			</section>
 
 			{/* Marquee Section with bottom-circle background */}
