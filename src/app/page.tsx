@@ -127,11 +127,11 @@ export default function Home() {
 						/>
 					</div>
 					<nav className="hidden sm:flex items-center justify-around gap-12 text-xl text-white font-inky-body">
-						<a className="hover:text-red-600">Home</a>
-						<a className="hover:text-red-600">About</a>
-						<a className="hover:text-red-600">Products</a>
-						<a className="hover:text-red-600">Services</a>
-						<a className="hover:text-red-600">Publishing</a>
+						<a className="hover:text-red-600 cursor-pointer">Home</a>
+						<a className="hover:text-red-600 cursor-pointer">About</a>
+						<a className="hover:text-red-600 cursor-pointer">Products</a>
+						<a className="hover:text-red-600 cursor-pointer">Services</a>
+						<a className="hover:text-red-600 cursor-pointer">Publishing</a>
 					</nav>
 					<div className="hidden sm:flex items-center">
 						<button className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center transition-colors">
