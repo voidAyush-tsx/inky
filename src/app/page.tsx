@@ -3,7 +3,113 @@
 import Image from "next/image";
 import { User } from "lucide-react";
 import LottieBackground from "../components/finger_scan";
-import {motion} from "motion/react"
+import { motion, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+
+// Slanted Marquee Component
+interface MarqueeProps {
+  text: string;
+  duration?: number;
+  scale?: number;
+  direction?: 'left' | 'right';
+  backgroundColor?: string;
+  textColor?: string;
+  accentColor?: string;
+  translateY?: number;
+}
+
+const SlantedMarquee = ({ 
+  text, 
+  duration = 20, 
+  scale = 1.1,
+  direction = 'left',
+  backgroundColor = '#000000',
+  textColor = '#940008',
+  accentColor = '#0000008f',
+  translateY = 0
+}: MarqueeProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="relative overflow-hidden whitespace-nowrap py-4 border-2 border-white/80"
+      style={{
+        backgroundColor,
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        boxShadow: `0 10px 40px ${backgroundColor}33`,
+        transition: 'all 0.3s ease',
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex gap-5">
+        {[...Array(3)].map((_, index) => (
+          <motion.div
+            key={index}
+            animate={{
+              x: direction === 'left' ? [0, '-100%'] : ['-100%', '0%'],
+            }}
+            transition={{
+              duration: duration,
+              repeat: Infinity,
+              ease: 'linear',
+              repeatType: 'loop',
+            }}
+            style={{
+              animationPlayState: isHovered ? 'paused' : 'running',
+            }}
+            className="shrink-0"
+          >
+            <span 
+              className="text-2xl md:text-4xl font-medium tracking-tight"
+              style={{ color: textColor }}
+              dangerouslySetInnerHTML={{ 
+                __html: text.replace(
+                  /\{([^}]+):([^}]+)\}/g, 
+                  `<span style="color: $2;">$1</span>`
+                )
+              }}
+            />
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
+// Counter Component
+const AnimatedCounter = ({ target, id }: { target: number; id: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          let count = 0;
+          const interval = setInterval(() => {
+            if (count <= target) {
+              element.textContent = count.toString();
+              count++;
+            } else {
+              clearInterval(interval);
+            }
+          }, 10);
+        }, 1250);
+      }
+    }
+  }, [isInView, hasAnimated, target, id]);
+
+  return <span ref={ref} id={id}>0</span>;
+};
+
 
 export default function Home() {
 	return (
@@ -226,6 +332,37 @@ export default function Home() {
 						</div>
 					</div>
 				</main>
+
+				{/* Slanted Infinite Marquee Section */}
+				<div className="overflow-x-clip flex flex-col items-center">
+					{/* first loop */}
+				<div className="rotate-[8deg] w-[120vw]">
+					<SlantedMarquee
+					// text="{Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} | {Create:#ff6b6b} | {Publish:#4ecdc4} | {Inspire:#ffe66d} |"
+					text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
+					duration={20}
+					scale={1.1}
+					direction="left"
+					backgroundColor="#000000"
+					textColor="#940008"
+					accentColor="#0000008f"
+					translateY={0}
+					/>
+				</div>
+					{/* second loop */}
+				<div className="rotate-[-8deg] w-[120vw] -translate-y-24">
+					<SlantedMarquee
+					text="Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff} Create {|:#ffffff} Publish {|:#ffffff} Inspire {|:#ffffff}"
+					duration={20}
+					scale={1.1}
+					direction="right"
+					backgroundColor="#000000"
+					textColor="#940008"
+					accentColor="#0000008f"
+					translateY={0}
+					/>
+				</div>
+				</div>
 			</div>
 		</div>
 	);
